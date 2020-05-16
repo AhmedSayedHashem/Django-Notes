@@ -1,4 +1,5 @@
 <h1> All the available notes </h1>
 {% for note in allNotes  %}
-{{note}}<br>
+    <a href="{% url 'notes:note_details' note.slug%}">{{note}}</a>
+    <br>
 {% endfor %}

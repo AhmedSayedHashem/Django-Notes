@@ -13,5 +13,9 @@ def all_notes(request):
     }
     return render(request, 'all_notes.html', context)
 # show note details
-def details(request):
-    pass
+def details(request, slug):
+    note=Note.objects.get(slug=slug)
+    context={
+        'note':note
+    }
+    return render(request, 'noteDetails.html', context)
