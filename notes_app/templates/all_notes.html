@@ -1,4 +1,9 @@
 <h1> All the available notes </h1>
+
+<a href="{% url 'notes:add_note' %}"> Add New Note</a>
+<br>
+<hr>
+
 {% for note in allNotes  %}
     <a href="{% url 'notes:note_details' note.slug%}">{{note}}</a>
     <br>
