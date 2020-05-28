@@ -41,7 +41,7 @@ def note_add(request):
     context={
         'form' : form,
     }
-    return render(request, 'add.html', context)
+    return render(request, 'create.html', context)
 
 def edit(request, slug):
     note = get_object_or_404(Note, slug=slug)
@@ -60,4 +60,4 @@ def edit(request, slug):
     context={
         'form' : form,
     }
-    return render(request, 'add.html', context)
+    return render(request, 'update.html', context)
