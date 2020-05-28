@@ -18,7 +18,7 @@ class Note(models.Model):
     created = models.DateTimeField(blank=True, default=datetime.datetime.now)
     active  = models.BooleanField(default=True)
     tags    = models.CharField(max_length=50, blank=True)
-
+    img     = models.ImageField(upload_to="notes-img")
 
     # to overwrite on save method to automatic save slug 
     def save(self, *args, **kwargs):

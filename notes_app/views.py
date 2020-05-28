@@ -13,16 +13,18 @@ def all_notes(request):
     # return HttpResponse('<h1> this  section retrive all notes </h1>')
     all_notes = Note.objects.all()
     context={
+        # allNotes return to used in form(ui)
        'allNotes' : all_notes 
     }
-    return render(request, 'all_notes.html', context)
+    return render(request, 'notes.html', context)
+
 # show note details
-def details(request, slug):
-    note=Note.objects.get(slug=slug)
+def details(request, _slug):
+    note=Note.objects.get(slug=_slug)
     context={
         'note':note
     }
-    return render(request, 'noteDetails.html', context)
+    return render(request, 'one_note.html', context)
 
 def note_add(request):
     if request.method == 'POST':

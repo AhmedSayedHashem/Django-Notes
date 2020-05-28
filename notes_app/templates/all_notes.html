@@ -6,5 +6,6 @@
 
 {% for note in allNotes  %}
     <a href="{% url 'notes:note_details' note.slug%}">{{note}}</a>
+    <a href="{% url 'notes:note_details' note.slug %}">{{note.title}}</a>
     <br>
 {% endfor %}
